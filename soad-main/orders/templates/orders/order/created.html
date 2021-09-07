@@ -1,0 +1,12 @@
+{% extends "main/base.html" %}
+{% block title %}
+Thank You
+{% endblock %}
+
+{% block content %}
+	<div style="padding:50px;">
+		<h1 style="font-size:20">Thank You </h1>
+	    <p style="font-size:20">Please continue to payment. Your order number is <strong style="color: darkblue"> {{ order.id }}</strong>.</p>
+	    <a href="{% url 'sindex' order.id %}" class=button> Payment</a>
+	</div>
+{% endblock %}

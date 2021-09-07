@@ -1,0 +1,24 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="content-section" style="padding:50px 100px">
+  <div class="media">
+    <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" height="100px" width="100px" style="margin: 20px;" >
+      <div class="media-body" >
+          <h2 class="account-heading" style="margin: 20px;">{{user.username}}</h2>
+          <p class="text-secondary" style="margin: 20px;">{{user.email}}</p>
+          <p style="margin: 20px; color: mediumslateblue;">{{user.profile.About}}</p>
+          <p style="margin: 20px; color:mediumslateblue ;">Skills:                    {{user.profile.skills}}</p>
+
+      </div>
+          <div class="border-top pt-3">
+                  <li style="padding: 5px; color: white;"><a href="{% url 'edit_profile'%}">Edit Profile</a></li>
+                  <li style="padding: 5px; color: white;"><a href="{% url 'password_reset'%}">Password Reset</a></li>
+                  <li style="padding: 5px; color: white;"><a href="{% url 'mycourses' %}">My Courses</a></li>
+                  <li style="padding: 5px; color: white;"><a href="{% url 'myorders' %}">My orders</a></li>
+          </div>
+    </div>
+</div>
+
+{% endblock content %}
